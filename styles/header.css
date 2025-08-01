@@ -1,0 +1,50 @@
+#primary {
+    padding-block: 20px;
+    
+    div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+    /* nesting css */
+    div:nth-child(2) {
+      margin-inline: auto;
+    }
+  
+    div:nth-child(3) {
+      justify-self: end;
+    }
+  }
+
+  #secondary {
+    padding-block: 14px;
+    border: solid 1px var(--stroke-color);
+    border-inline: none;
+    justify-content: space-between;
+  }
+
+  /* Media Queries para Header */
+  @media (max-width: 768px) {
+    #primary {
+      padding-block: 16px;
+    }
+    
+    #primary div {
+      font-size: 14px;
+    }
+    
+    #secondary {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #primary div:first-child {
+      display: none;
+    }
+    
+    #primary div:last-child {
+      display: none;
+    }
+  }

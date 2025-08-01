@@ -1,0 +1,248 @@
+/* Sections - Mobile First */
+
+/* Headers das seções */
+section header {
+    border-top: 1px solid var(--stroke-color);
+    padding-block: 8px 16px;
+    font: var(--text-span);
+
+    a {
+        justify-self: end;
+        align-items: center;
+        gap: 8px;
+
+        span {
+            background-image: url(../assets/icons/ArrowRight.svg);
+            width: 16px;
+            height: 16px;
+        }
+
+        &:hover span {
+            background-image: url(../assets/icons/ArrowRight-hover.svg);
+        }
+    }
+}
+
+/* Featured Section - Mobile */
+#featured {
+    grid-area: featured;
+    display: grid;
+    gap: 16px;
+
+    img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card {
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            top: 50%;
+            background: linear-gradient(180deg,
+                    transparent 0%,
+                    #020617 100%);
+        }
+
+        figcaption {
+            position: absolute;
+            bottom: 0;
+            padding: 16px;
+
+            h2 {
+                margin-top: 6px;
+            }
+        }
+    }
+    
+    /* Grid secundário também em coluna única */
+    .grid-cols-2 {
+        gap: 16px;
+    }
+}
+
+/* Weekly Section - Mobile */
+#weekly {
+    grid-area: weekly;
+
+    &>div {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    img {
+        height: 160px;
+        object-fit: cover;
+    }
+
+    figure {
+        position: relative;
+
+        .content-tag {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+
+        p {
+            margin-top: 8px;
+            font-weight: 800;
+        }
+    }
+}
+
+/* AI Section - Mobile */
+#ai {
+    grid-area: ai;
+
+    img {
+        width: 100%;
+        max-width: 200px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+    h3 {
+        margin-block: 6px 4px;
+    }
+    
+    article {
+        display: grid;
+        gap: 12px;
+        
+        /* Imagem primeiro em mobile */
+        div:last-child {
+            order: -1;
+        }
+    }
+}
+
+/* Aside */
+aside {
+    grid-area: aside;
+}
+
+#more {
+    margin-top: 24px;
+  
+    h3 {
+      margin-top: 6px;
+    }
+  
+    img {
+      width: 50px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    section header {
+        padding-block: 10px 20px;
+    }
+    
+    #featured {
+        gap: 20px;
+        
+        img {
+            height: 240px;
+        }
+        
+        .card figcaption {
+            padding: 20px;
+        }
+    }
+    
+    #weekly > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #ai {
+        img {
+            width: 140px;
+            margin: 0;
+        }
+        
+        article {
+            grid-template-columns: 1fr 140px;
+            
+            div:last-child {
+                order: 0;
+            }
+        }
+    }
+    
+    #more {
+        margin-top: 28px;
+        
+        img {
+            width: 64px;
+        }
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    section header {
+        padding-block: 12px 24px;
+    }
+    
+    #featured {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        
+        img {
+            height: 100%;
+        }
+        
+        .card figcaption {
+            padding: 24px;
+            
+            &:has(.text-lg) {
+                padding: 12px;
+            }
+        }
+    }
+    
+    #weekly > div {
+        grid-template-columns: repeat(4, 292px);
+    }
+    
+    #ai {
+        img {
+            width: 176px;
+        }
+        
+        article {
+            grid-template-columns: 1fr 176px;
+            gap: 16px;
+        }
+        
+        h3 {
+            margin-block: 8px 4px;
+        }
+    }
+    
+    #more {
+        margin-top: 32px;
+        
+        img {
+            width: 72px;
+        }
+    }
+}
+
+/* Desktop large - Featured com layout complexo */
+@media (min-width: 1200px) {
+    #featured {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+}

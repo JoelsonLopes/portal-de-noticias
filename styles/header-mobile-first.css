@@ -1,0 +1,72 @@
+/* Header - Mobile First */
+
+#primary {
+    padding-block: 16px;
+    
+    div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+    /* Logo centralizado */
+    div:nth-child(2) {
+      margin-inline: auto;
+    }
+  
+    /* Menu e busca ocultos em mobile pequeno */
+    div:nth-child(1),
+    div:nth-child(3) {
+      display: none;
+    }
+  }
+
+  /* Navegação secundária oculta em mobile */
+  #secondary {
+    display: none;
+  }
+
+/* Tablet */
+@media (min-width: 768px) {
+    #primary {
+        padding-block: 18px;
+        
+        div {
+            font-size: 16px;
+        }
+        
+        /* Mostra menu e busca */
+        div:nth-child(1),
+        div:nth-child(3) {
+            display: flex;
+        }
+        
+        div:nth-child(3) {
+            justify-self: end;
+        }
+    }
+    
+    #secondary {
+        display: grid;
+        grid-auto-flow: column;
+        padding-block: 14px;
+        border: solid 1px var(--stroke-color);
+        border-inline: none;
+        justify-content: space-between;
+        overflow-x: auto;
+        gap: 16px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    #primary {
+        padding-block: 20px;
+    }
+    
+    #secondary {
+        overflow-x: visible;
+        gap: 0;
+    }
+}

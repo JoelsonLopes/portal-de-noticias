@@ -1,0 +1,66 @@
+/* Utility Classes - Mobile First */
+
+/* Layout */
+.grid {
+    display: grid;
+}
+
+.grid-flow-col {
+    grid-auto-flow: column;
+}
+
+.grid-cols-2 {
+    grid-template-columns: 1fr;
+}
+
+/* Spacing - Mobile */
+.gap-16 {
+    gap: 8px;
+}
+
+.gap-32 {
+    gap: 16px;
+}
+
+/* Typography - Mobile */
+.text-2xl {
+    font: var(--h1);
+}
+
+.text-xl {
+    font: var(--h2);
+}
+
+.text-lg {
+    font: var(--h3);
+}
+
+.text-sm {
+    font: var(--text-sm);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .gap-16 {
+        gap: 12px;
+    }
+    
+    .gap-32 {
+        gap: 24px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .gap-16 {
+        gap: 16px;
+    }
+    
+    .gap-32 {
+        gap: 32px;
+    }
+}
